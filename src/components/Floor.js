@@ -67,7 +67,7 @@ const Floor = ({navigation}) =>{
 }
 
 const buttonClickedHandler = () => {
-    console.log('You have been clicked a button!');
+    alert('Hi Button');
     // do something
   };
 

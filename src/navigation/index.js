@@ -31,31 +31,69 @@ const Navigation = () =>{
 }
 
 const CustomDrawerContent = (props) => {
+  const {colors} = useTheme();
 
   return (
-    <DrawerContentScrollView {...props}>
-      <Box style={{paddingLeft:16,paddingTop:35}}>
+    <DrawerContentScrollView {...props} >
+      <Box>
       <Image
-        source={require("../images/img_avatar.png")}
-        alt='avater'
+        source={require("../images/LOGO.png")}
+        alt='LOGO'
       />
-      <Text style={{fontSize:24,fontWeight:'bold',paddingTop:20}}>May</Text>
       </Box>
-      <Divider my="2"/>
       <DrawerItemList {...props} />
       <DrawerItem 
-        label="Account"
+        label="主題"
         labelStyle={ {fontSize: 16} }
+        inactiveTintColor = {colors.drawerBrown}
         icon={({ color }) => (
-          <MaterialCommunityIcons name="account-circle" color={color} size={26} />
+          <MaterialCommunityIcons name="palette" color={color} size={30} />
         )}
-        onPress={()=>alert('Hi May')}
+        onPress={()=>alert('主題')}
       />
       <DrawerItem 
-        label="Setting"
+        label="我的最愛"
         labelStyle={ {fontSize: 16} }
+        inactiveTintColor = {colors.drawerBrown}
         icon={({ color }) => (
-          <MaterialCommunityIcons name="cog" color={color} size={26} />
+          <MaterialCommunityIcons name="bookmark-outline" color={color} size={30} />
+        )}
+        onPress={()=>alert('我的最愛')}
+      />
+      <Divider bg={colors.drawerBrown} width={270} marginLeft={4}/>
+      <DrawerItem 
+        label="密碼"
+        labelStyle={ {fontSize: 16} }
+        inactiveTintColor = {colors.drawerBrown}
+        icon={({ color }) => (
+          <MaterialCommunityIcons name="lock-outline" color={color} size={30} />
+        )}
+        onPress={()=>alert('密碼')}
+      />
+      <DrawerItem 
+        label="備份到雲端"
+        labelStyle={ {fontSize: 16} }
+        inactiveTintColor = {colors.drawerBrown}
+        icon={({ color }) => (
+          <MaterialCommunityIcons name="cloud-upload" color={color} size={30} />
+        )}
+        onPress={()=>alert('備份到雲端')}
+      />
+      <DrawerItem 
+        label="問題回報"
+        labelStyle={ {fontSize: 16} }
+        inactiveTintColor = {colors.drawerBrown}
+        icon={({ color }) => (
+          <MaterialCommunityIcons name="chat-processing-outline" color={color} size={30} />
+        )}
+        onPress={()=>alert('問題回報')}
+      />
+      <DrawerItem 
+        label="設定"
+        labelStyle={ {fontSize: 16} }
+        inactiveTintColor = {colors.drawerBrown}
+        icon={({ color }) => (
+          <MaterialCommunityIcons name="cog" color={color} size={30} />
         )}
         onPress={()=>alert('Here will be setting someday')}
       />
@@ -70,8 +108,12 @@ const MyDrawer = () => {
     <Drawer.Navigator 
       initialRouteName="Home"
       screenOptions={{
-        drawerActiveTintColor:colors.primaryGreen,
-        drawerStyle: { width: 260 },
+        drawerInactiveTintColor:colors.drawerBrown,
+        drawerActiveTintColor:colors.drawerBrown,
+        drawerStyle: { 
+          width: 300 ,
+          backgroundColor: '#E4E1DC',
+        },
         drawerLabelStyle: { fontSize: 16 },
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}
@@ -81,9 +123,9 @@ const MyDrawer = () => {
         component={HomeStackNavigator} 
         options={{
           headerShown: false,
-          title: "Home",
+          title: "主頁",
           drawerIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <MaterialCommunityIcons name="home-outline" color={color} size={30} />
           ),
         }}
       />
