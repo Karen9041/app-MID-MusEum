@@ -15,6 +15,7 @@ import { Divider, Image, Box, Text, Pressable } from 'native-base';
 import BookScreen from '../screens/BookScreen';
 import FloorScreen from '../screens/FloorScreen';
 import DetailScreen from '../screens/DetailScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 import MyTheme from '../Theme';
 
@@ -88,15 +89,6 @@ const CustomDrawerContent = (props) => {
         )}
         onPress={()=>alert('問題回報')}
       />
-      <DrawerItem 
-        label="設定"
-        labelStyle={ {fontSize: 16} }
-        inactiveTintColor = {colors.drawerBrown}
-        icon={({ color }) => (
-          <MaterialCommunityIcons name="cog" color={color} size={30} />
-        )}
-        onPress={()=>alert('Here will be setting someday')}
-      />
     </DrawerContentScrollView>
   );
 }
@@ -129,11 +121,47 @@ const MyDrawer = () => {
           ),
         }}
       />
+       <Drawer.Screen 
+        name="SettingsStack" 
+        component={SettingsStack} 
+        options={{
+          headerShown: false,
+          title: "設定",
+          drawerIcon: ({ color }) => (
+            <MaterialCommunityIcons name="cog" color={color} size={30} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );  
 }
 
-
+const SettingsStack = ({navigation}) => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          title: null,
+          headerStyle:{
+            backgroundColor:"#844331"
+          },
+          headerLeft: () => (
+              <MaterialCommunityIcons
+                name={'menu'}
+                color={'white'}
+                size={28}
+                onPress={() => navigation.openDrawer()}
+              />
+          ),
+          
+        }}
+      />
+      
+    </Stack.Navigator>    
+  );
+}
 
 const HomeStackNavigator =({navigation}) =>{
   const {colors} = useTheme();
@@ -146,9 +174,13 @@ const HomeStackNavigator =({navigation}) =>{
                 options={{
                     title: null,
                     headerShadowVisible:false,
+                    headerStyle:{
+                      backgroundColor:"#94A89A"
+                    },
                     headerLeft: () => (
                         <MaterialCommunityIcons
                           name={'menu'}
+                          color={'white'}
                           size={28}
                           onPress={() => navigation.openDrawer()}
                         />
@@ -168,9 +200,13 @@ const HomeStackNavigator =({navigation}) =>{
                 options={{
                     title: null,
                     headerShadowVisible:false,
+                    headerStyle:{
+                      backgroundColor:"#94A89A"
+                    },
                     headerLeft: () => (
                       <MaterialCommunityIcons
                         name={'menu'}
+                        color={'white'}
                         size={28}
                         onPress={() => navigation.openDrawer()}
                       />
@@ -178,6 +214,7 @@ const HomeStackNavigator =({navigation}) =>{
                     headerRight: () => (
                       <MaterialCommunityIcons
                         name={'magnify'}
+                        color={'white'}
                         size={28}
                         // style={{ marginRight: 8 }}
                       />
@@ -190,9 +227,13 @@ const HomeStackNavigator =({navigation}) =>{
                 options={{
                     title: null,
                     headerShadowVisible:false,
+                    headerStyle:{
+                      backgroundColor:"#94A89A"
+                    },
                     headerLeft: () => (
                       <MaterialCommunityIcons
                         name={'menu'}
+                        color={'white'}
                         size={28}
                         onPress={() => navigation.openDrawer()}
                       />
@@ -203,11 +244,11 @@ const HomeStackNavigator =({navigation}) =>{
                         <MaterialCommunityIcons
                           name={'bookmark-outline'}
                           size={28}
-                          color={'black'}
+                          color={'white'}
                           />:<MaterialCommunityIcons
                           name={'bookmark'}
                           size={28}
-                          color={colors.primaryGreen}
+                          color={'white'}
                           />
                         }
                         
