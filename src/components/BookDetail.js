@@ -1,7 +1,7 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View, Image} from "react-native";
 
-const BookDetail = ({book, navigation, title}) => {
+const BookDetail = ({book, navigation}) => {
     return(
     <View style={{flexDirection: 'column'}}>
       <Pressable onPress={()=> navigation.navigate('Detail', book)}>

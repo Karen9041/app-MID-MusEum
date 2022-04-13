@@ -150,9 +150,9 @@ const HomeStackNavigator =({navigation}) =>{
                     headerShadowVisible:false,
                     headerLeft: () => (
                       <MaterialCommunityIcons
-                        name={'chevron-left'}
+                        name={'menu'}
                         size={28}
-                        onPress={() => navigation.goBack()}
+                        onPress={() => navigation.openDrawer()}
                       />
                     ),
                     headerRight: () => (

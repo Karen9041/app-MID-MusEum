@@ -1,19 +1,20 @@
+import { Box, Divider, HStack } from 'native-base';
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View, Image, Button, Linking } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
 const DetailScreen = ({ route }) => {
   const { 
     title, 
     author,
-    price,
-    url,
-    star,
+    publisher,
+    descriptions,
+    ISBN,
     image,
-    descriptions
+    language
   } = route.params;
   return (
-    <ScrollView style={{backgroundColor: '#F6F6F6'}} >
-      <View style={{alignItems: 'center'}}>
+    <ScrollView style={{backgroundColor: '#F7F7F7'}} >
+      <View style={{alignItems: 'center',backgroundColor:'white'}}>
         <Image
           style={styles.imageStyle}
           source={{
@@ -21,57 +22,98 @@ const DetailScreen = ({ route }) => {
           }}
         />
       </View>
+      <Divider bg = "#94A89A" />
       <View style={styles.cardContainerStyle}>
-          <Text>
             <Text style={styles.textTitleStyle}>{title}</Text>
-          </Text>
-          <Text>            
-            <Text style={styles.textAuthorStyle}>{author}</Text>
-          </Text>
-          <View style={{flexDirection:'row' ,paddingTop:5}}>
-            <Text style={styles.textScore}>{star}.0 / 5.0</Text>
-          </View>
-          <Text style={styles.textDescriptionStyle}>{descriptions}</Text>
+          <HStack justifyContent={'space-around'} marginTop={5}>
+              <Box>
+                <Text style={styles.textInfoStyle}>資訊</Text>
+                <Divider bg = "#94A89A" height={1} width={100}/>
+              </Box>
+              <Text style={styles.textMemStyle}>心得評分</Text>         
+          </HStack>
       </View>
-      <View style={styles.cardContainerStyle}>
-        <Button 
-            color={'#6200EE'}
-            onPress={() => Linking.openURL(url)}
-            title={`BUY NOW FOR $${price}`}
-        />  
+      <Divider bg = "#94A89A" />
+      <View style={styles.cardInformationStyle}>
+          <HStack justifyContent={'space-between'} padding={1}>
+            <Box paddingLeft={2} marginRight={-1}>
+              <Text style={styles.textInformationTitleStyle}>作者</Text>
+              <Text>{author}</Text>
+            </Box>
+            <Divider bg = "#94A89A"  orientation="vertical" />
+            <Box marginLeft={-8}>
+              <Text style={styles.textInformationTitleStyle}>出版社</Text>
+              <Text>{publisher}</Text>
+            </Box>
+            <Divider bg = "#94A89A"  orientation="vertical" height={70} />
+            <Box paddingRight={10} marginLeft={-8}>
+              <Text style={styles.textInformationTitleStyle}>語言</Text>
+              <Text>{language}</Text>
+            </Box>
+          </HStack>
       </View>
+      <HStack marginHorizontal={35} marginVertical={5}>
+          <Text style={styles.textDescriptionTitleStyle}>ISBN ：</Text>
+          <Text>{ISBN}</Text>
+      </HStack>
+      <HStack marginHorizontal={35} marginVertical={5}>
+          <Text style={styles.textDescriptionTitleStyle}>備註 ：</Text>
+          <Text>{descriptions}</Text>
+      </HStack>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({  
     imageStyle: {
-        height: 270,
-        width: 190,
+        height: 207,
+        width: 207,
     },
     cardContainerStyle: {
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        padding: 10,
+        paddingHorizontal: 15,
+        paddingTop:15,
         marginHorizontal: 10,
-        marginTop: 5
+        backgroundColor:'#F6F6F6'
     },
     textTitleStyle:{
-        fontSize: 24,
+        fontSize: 16,
         fontWeight:'bold',
+        color:"#496351"
     },
-    textAuthorStyle:{
+    textInfoStyle:{
+      textAlign:'center',
+      fontSize: 14,
+      fontWeight:'bold',
+      color:"#496351"
+    },
+    textMemStyle:{
+      width:100,
+      textAlign:'center',
+      fontSize: 14,
+      color:"#ABBAAF"
+    },
+    cardInformationStyle:{
+      width:300,
+      height:80,
+      backgroundColor:'white',
+      borderColor:'#94A89A',
+      borderWidth:1,
+      borderRadius:8,
+      marginHorizontal:30,
+      marginVertical:25
+    },
+    textInformationTitleStyle:{
         fontSize: 14,
-        color:'#666666',
+        color:'#496351',
+        paddingVertical:5,
+        paddingBottom:15,
     },
-    textScore:{
-      fontSize:12,
-      paddingLeft:5,
-    },
-    textDescriptionStyle:{
-        marginTop: 15,
-        lineHeight:24,
-        fontWeight:'400'
+    textDescriptionTitleStyle:{
+        // marginTop: 15,
+        // lineHeight:24,
+        fontWeight:'bold',
+        color:"#496351",
+        fontSize:14,
     }
 });
 
