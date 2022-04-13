@@ -22,23 +22,24 @@ const BookDetail = ({book, navigation, title}) => {
 
 const styles = StyleSheet.create({
     cardContainerStyle: {
-      marginLeft: 5,
-      marginRight: 5,
-      marginTop: 40,
+      marginLeft: 6,
+      marginRight: 6,
+      marginTop: 12,
       borderColor:'#8094A89A',
       borderWidth:1,
       borderRadius:5,
       width:100,
-      height:140,
+      height:150,
       backgroundColor:'white',
     },
     headerContainerStyle: {
       paddingLeft: 8,
     },
     headerTitleStyle: {
-      fontSize: 14,
+      fontSize: 13,
+      color:"#496351",
       fontWeight: 'bold',
-      width: 82,
+      width: 85,
       textAlign:'center',
     },
     cardSectionStyle: {

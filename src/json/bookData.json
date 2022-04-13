@@ -4,8 +4,8 @@
    "horizontal": true,
    "data": [
       {
-         "title": "Fashinopolis",
-         "author": "Dana Thomas",
+         "title": "三年K班",
+         "author": "夏茗悠",
          "url": "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
          "star":"4",
          "price":"46.99",
@@ -13,7 +13,7 @@
          "descriptions": "Hi there"
       },
       {
-         "title": "Chanel",
+         "title": "再見，冥王星",
          "author": "Patrick Mauriès",
          "url": "https://www.amazon.com/Fearless-Enhanced-Taylor-Swift/dp/B001EYGOEM",
          "star":"4",
@@ -22,7 +22,88 @@
          "descriptions": "Taylor Swift has been enhanced by the addition of 3 brand new tracks (\"I'm Only Me When I'm With You\", \"Invisible\", \"A Perfectly Good Heart\") and a pop version of the hit single \"Teardrops On My Guitar\"."
       },
       {
-         "title": "Calligraphy",
+         "title": "陪你到世界終結",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "聲息(上)",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "聲息(下)",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "八分鐘的溫暖",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "日界線",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "曾有你的天氣",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "以你為名的光芒",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "戀愛風線",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "拂過冬季到雲來",
+         "author": "June & Lucy",
+         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
+         "star":"4",
+         "price":"99.99",
+         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
+         "descriptions": "Hello World!"
+      },
+      {
+         "title": "缺席者",
          "author": "June & Lucy",
          "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
          "star":"4",
@@ -30,5 +111,6 @@
          "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
          "descriptions": "Hello World!"
       }
+      
    ]}
 ]

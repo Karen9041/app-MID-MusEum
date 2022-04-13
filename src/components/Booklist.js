@@ -3,7 +3,6 @@ import { Text, FlatList, SectionList, StyleSheet } from "react-native";
 import { Divider, Button, HStack } from "native-base";
 import BookDetail from "./BookDetail"
 import sections from "../json/bookData.json";
-import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 const Booklist = ({navigation}) => {
   const renderSectionHeader = ({section}) => (
@@ -26,12 +25,13 @@ const Booklist = ({navigation}) => {
         >新增</Button>
       </HStack>
       <Divider bg = "#94A89A" width ={315} ml={2.5}/>
+      <HStack></HStack>
       <FlatList
-        horizontal={true}
         data={section.data}
         renderItem={({item})=><BookDetail book={item} navigation={navigation} title={section.title}/>}
         showsHorizontalScrollIndicator={false}
         keyExtractor={ item => item.title }
+        numColumns={3}
       />
     </>
   );
@@ -40,7 +40,7 @@ const Booklist = ({navigation}) => {
   return (
     <SectionList 
       sections={sections}
-      contentContainerStyle={{ paddingHorizontal: 12 ,paddingBottom:50}}
+      contentContainerStyle={{ paddingHorizontal: 12 ,paddingBottom:50 }}
       stickySectionHeadersEnabled={false}
       showsHorizontalScrollIndicator={false}
       renderSectionHeader={renderSectionHeader}
