@@ -1270,6 +1270,11 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@iconify/react@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.2.1.tgz#d18da31cec58c1aa8fdf4def451cc7e3196d88de"
+  integrity sha512-yKzixjC9ct9RC/aSGo1OGxkG2rpfhlr/urRz6k2YZlIBzn92PBTlqtSx8o8dFYEorr3eUFSCBZFzBy1yw5jsAA==
+
 "@internationalized/date@3.0.0-alpha.4":
   version "3.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@internationalized/date/-/date-3.0.0-alpha.4.tgz#3c13bf4560f65e9f48893eb158a9b5e2d05a12e8"

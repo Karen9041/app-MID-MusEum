@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -20,7 +19,6 @@ import DetailScreen from '../screens/DetailScreen';
 import MyTheme from '../Theme';
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
 
@@ -72,7 +70,7 @@ const MyDrawer = () => {
     <Drawer.Navigator 
       initialRouteName="Home"
       screenOptions={{
-        drawerActiveTintColor:colors.primary700,
+        drawerActiveTintColor:colors.primaryGreen,
         drawerStyle: { width: 260 },
         drawerLabelStyle: { fontSize: 16 },
       }}
@@ -113,13 +111,35 @@ const HomeStackNavigator =({navigation}) =>{
                           onPress={() => navigation.openDrawer()}
                         />
                       ),
+                    // headerRight: () => (
+                    //     <MaterialCommunityIcons
+                    //       name={'magnify'}
+                    //       size={28}
+                    //       // style={{ marginRight: 8 }}
+                    //     />
+                    //   )
+                }}
+            />
+            <Stack.Screen
+                name="List"
+                component={BookScreen}
+                options={{
+                    title: null,
+                    headerShadowVisible:false,
+                    headerLeft: () => (
+                      <MaterialCommunityIcons
+                        name={'menu'}
+                        size={28}
+                        onPress={() => navigation.openDrawer()}
+                      />
+                    ),
                     headerRight: () => (
-                        <MaterialCommunityIcons
-                          name={'magnify'}
-                          size={28}
-                          // style={{ marginRight: 8 }}
-                        />
-                      )
+                      <MaterialCommunityIcons
+                        name={'magnify'}
+                        size={28}
+                        // style={{ marginRight: 8 }}
+                      />
+                    )
                 }}
             />
             <Stack.Screen
@@ -145,7 +165,7 @@ const HomeStackNavigator =({navigation}) =>{
                           />:<MaterialCommunityIcons
                           name={'bookmark'}
                           size={28}
-                          color={colors.primary700}
+                          color={colors.primaryGreen}
                           />
                         }
                         

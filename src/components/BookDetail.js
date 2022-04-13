@@ -7,7 +7,7 @@ const BookDetail = ({book, navigation, title}) => {
     <View style={{flexDirection: 'column'}}>
       <View style={styles.cardContainerStyle}>
         <View style={styles.cardSectionStyle}>
-          <Pressable onPress={()=> navigation.navigate('Detail',book)}>
+          <Pressable onPress={()=> navigation.navigate('List')}>
             <Image
               style={styles.imageStyle}
               source={{uri: book.image}}

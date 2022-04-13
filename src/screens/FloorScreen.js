@@ -1,17 +1,11 @@
 import React from 'react';
-import { ScrollView, View, Image} from 'react-native';
-const FloorScreen = () =>  {
+import { Center} from "native-base";
+import Floor from "../components/Floor";
+const FloorScreen = ({ navigation }) =>  {
     return(
-        <ScrollView style={{backgroundColor: '#fff'}} >
-        <View style={{alignItems: 'center'}}>
-          <Image
-            style={styles.imageStyle}
-            source={{
-              uri: image
-            }}
-          />
-        </View>
-      </ScrollView>
+        <Center flex={1}>
+            <Floor navigation={navigation}/>
+        </Center>
     );
 }
 

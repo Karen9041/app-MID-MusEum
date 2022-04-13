@@ -9,6 +9,7 @@ const Booklist = ({navigation}) => {
     <>
       <Text style={styles.sectionHeader}>{section.title}</Text>
         <FlatList
+          horizontal={true}
           data={section.data}
           renderItem={({item})=><BookDetail book={item} navigation={navigation} title={section.title}/>}
           showsHorizontalScrollIndicator={false}
