@@ -1,6 +1,6 @@
 [
    {
-   "title": "Popular Books",
+   "title": "小說",
    "horizontal": true,
    "data": [
       {
@@ -29,39 +29,6 @@
          "price":"99.99",
          "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_calligraphy.png?raw=true",
          "descriptions": "Hello World!"
-      }
-   ]},
-   
-   {
-   "title": "Newest",
-   "horizontal": true,
-   "data": [
-      {
-         "title": "Yves Saint Laurent",
-         "author": "Suzy Menkes",
-         "url": "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
-         "star":"4",
-         "price":"46.99",
-         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_ysl.png?raw=true",
-         "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
-      },
-      {
-         "title": "The Book of Signs",
-         "author": "Rudolf Koch ",
-         "url": "https://www.amazon.com/Fearless-Enhanced-Taylor-Swift/dp/B001EYGOEM",
-         "star":"3",
-         "price":"30.55",
-         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_tbos.png?raw=true",
-         "descriptions": "Ohhhhhhhhhhhhhhh>.<"
-      },
-      {
-         "title": "Stitched Up",
-         "author": "Tansy E. Hoskins",
-         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
-         "star":"3",
-         "price":"66.66",
-         "image": "https://github.com/Karen9041/app-wk3-BookApp/blob/main/src/images/img_book_stitchedup.png?raw=true",
-         "descriptions": "I thought that I've been hurt before, But no one's ever left me quite this sore, Your words cut deeper than a knife, Now I need someone to breathe me back to life"
       }
    ]}
 ]

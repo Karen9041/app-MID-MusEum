@@ -6,7 +6,7 @@ const BookScreen = ({ navigation }) => {
   return (
     <View style={{
         flex: 1 ,
-        backgroundColor:'#fff',
+        backgroundColor:'#F6F6F6',
     }}>
       <Booklist 
         navigation={navigation}

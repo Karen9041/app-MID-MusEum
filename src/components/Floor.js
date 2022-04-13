@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const Floor = ({navigation}) =>{
     return(
     <>
-    <Pressable onPress={() => navigation.navigate('List',navigation) }>
+    <Pressable onPress={() => navigation.navigate('List') }>
                 <Box hight={100}>
                     <Image
                         source={

@@ -1,25 +1,22 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View, Image} from "react-native";
-import Starlist from "./Starlist";
 
 const BookDetail = ({book, navigation, title}) => {
     return(
     <View style={{flexDirection: 'column'}}>
-      <View style={styles.cardContainerStyle}>
-        <View style={styles.cardSectionStyle}>
-          <Pressable onPress={()=> navigation.navigate('List')}>
-            <Image
-              style={styles.imageStyle}
-              source={{uri: book.image}}
-            />
-          </Pressable>
-        </View>
-      </View> 
-      <View style={styles.headerContainerStyle}>
-        {(title == "Newest")?<Starlist star={book.star}/> : null}
-        <Text style={styles.headerTitleStyle}>{book.title}</Text>
-        <Text style={styles.headerContentStyle}>{book.author}</Text>
-      </View>   
+      <Pressable onPress={()=> navigation.navigate('Detail', book)}>
+        <View style={styles.cardContainerStyle}>
+          <View style={styles.cardSectionStyle}>
+              <Image
+                style={styles.imageStyle}
+                source={{uri: book.image}}
+              />
+          </View>
+          <View style={styles.headerContainerStyle}>
+            <Text style={styles.headerTitleStyle}>{book.title}</Text>
+          </View>
+        </View>    
+      </Pressable>
     </View>
 )};
 
@@ -27,31 +24,32 @@ const styles = StyleSheet.create({
     cardContainerStyle: {
       marginLeft: 5,
       marginRight: 5,
-      marginTop: 10,
+      marginTop: 40,
+      borderColor:'#8094A89A',
+      borderWidth:1,
+      borderRadius:5,
+      width:100,
+      height:140,
+      backgroundColor:'white',
     },
     headerContainerStyle: {
-      justifyContent: "space-around",
-      paddingLeft: 12,
+      paddingLeft: 8,
     },
     headerTitleStyle: {
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: 'bold',
-      paddingVertical: 5,
-      width: 140,
-    },
-    headerContentStyle: {
-      fontSize: 12,
-      fontWeight: '500',
-      color: "#131313",
-      opacity: 0.5,
-      width: '100%',
+      width: 82,
+      textAlign:'center',
     },
     cardSectionStyle: {
-      margin: 5,
+      margin:8,
     },
     imageStyle: {
-      height: 200,
-      width: 140,
+      height: 82,
+      width: 82,
+      borderRadius:5,
+      borderColor:"#94A89A80",
+      borderWidth:1,
     }
   });
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, ScrollView, Text, View, Image, Button, Linking } from 'react-native';
-import Starlist from '../components/Starlist';
 
 const DetailScreen = ({ route }) => {
   const { 
@@ -13,7 +12,7 @@ const DetailScreen = ({ route }) => {
     descriptions
   } = route.params;
   return (
-    <ScrollView style={{backgroundColor: '#fff'}} >
+    <ScrollView style={{backgroundColor: '#F6F6F6'}} >
       <View style={{alignItems: 'center'}}>
         <Image
           style={styles.imageStyle}
@@ -30,7 +29,6 @@ const DetailScreen = ({ route }) => {
             <Text style={styles.textAuthorStyle}>{author}</Text>
           </Text>
           <View style={{flexDirection:'row' ,paddingTop:5}}>
-            <Starlist star ={star}/>
             <Text style={styles.textScore}>{star}.0 / 5.0</Text>
           </View>
           <Text style={styles.textDescriptionStyle}>{descriptions}</Text>

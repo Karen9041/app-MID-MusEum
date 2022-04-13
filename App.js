@@ -1,6 +1,6 @@
 import { NativeBaseProvider } from "native-base";
 import React from "react";
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Navigation from './src/navigation';
 
 const App =() => {
