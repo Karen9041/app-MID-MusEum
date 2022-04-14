@@ -1,5 +1,5 @@
 import React from "react";
-import { Center, Image, Box, Button, Icon, Pressable, Text } from "native-base";
+import {  Image, Box, Button, Icon, Pressable, Text } from "native-base";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 const Floor = ({navigation}) =>{
     return(

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "wk3",
-    "slug": "wk3",
+    "name": "19_MusEum",
+    "slug": "19_museum",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This is Mid project....",
+    "githubUrl": "https://github.com/Karen9041/app-MID-MusEum"
   }
 }

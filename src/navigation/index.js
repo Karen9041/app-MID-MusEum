@@ -12,7 +12,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import { Divider, Image, Box, Text, Pressable, useColorMode } from 'native-base';
 
-import BookScreen from '../screens/BookScreen';
+import ListScreen from '../screens/ListScreen';
 import FloorScreen from '../screens/FloorScreen';
 import DetailScreen from '../screens/DetailScreen';
 import SettingsScreen from '../screens/SettingsScreen';
@@ -195,7 +195,7 @@ const HomeStackNavigator =({navigation}) =>{
             />
             <Stack.Screen
                 name="List"
-                component={BookScreen}
+                component={ListScreen}
                 options={{
                     title: null,
                     headerShadowVisible:false,

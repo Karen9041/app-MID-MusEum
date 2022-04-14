@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "native-base";
 import Booklist from "../components/Booklist";
 
-const BookScreen = ({ navigation }) => {
+const ListScreen = ({ navigation }) => {
   return (
     <Box 
         flex={1}
@@ -15,4 +15,4 @@ const BookScreen = ({ navigation }) => {
   );
 };
 
-export default BookScreen;
+export default ListScreen;
