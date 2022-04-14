@@ -10,7 +10,7 @@ import {
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-import { Divider, Image, Box, Text, Pressable } from 'native-base';
+import { Divider, Image, Box, Text, Pressable, useColorMode } from 'native-base';
 
 import BookScreen from '../screens/BookScreen';
 import FloorScreen from '../screens/FloorScreen';
@@ -33,12 +33,13 @@ const Navigation = () =>{
 
 const CustomDrawerContent = (props) => {
   const {colors} = useTheme();
+  const{colorMode} = useColorMode();
 
   return (
     <DrawerContentScrollView {...props} >
       <Box>
       <Image
-        source={require("../images/LOGO.png")}
+        source={colorMode =="light"?require("../images/LOGO.png"):require("../images/LOGO_dark.png")}
         alt='LOGO'
       />
       </Box>
@@ -46,7 +47,7 @@ const CustomDrawerContent = (props) => {
       <DrawerItem 
         label="主題"
         labelStyle={ {fontSize: 16} }
-        inactiveTintColor = {colors.drawerBrown}
+        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}
         icon={({ color }) => (
           <MaterialCommunityIcons name="palette" color={color} size={30} />
         )}
@@ -55,18 +56,16 @@ const CustomDrawerContent = (props) => {
       <DrawerItem 
         label="我的最愛"
         labelStyle={ {fontSize: 16} }
-        inactiveTintColor = {colors.drawerBrown}
-        icon={({ color }) => (
+        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}        icon={({ color }) => (
           <MaterialCommunityIcons name="bookmark-outline" color={color} size={30} />
         )}
         onPress={()=>alert('我的最愛')}
       />
-      <Divider bg={colors.drawerBrown} width={270} marginLeft={4}/>
+      <Divider bg={colorMode =="light"? colors.drawerBrown:"#F6F6F6"} width={270} marginLeft={4}/>
       <DrawerItem 
         label="密碼"
         labelStyle={ {fontSize: 16} }
-        inactiveTintColor = {colors.drawerBrown}
-        icon={({ color }) => (
+        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}        icon={({ color }) => (
           <MaterialCommunityIcons name="lock-outline" color={color} size={30} />
         )}
         onPress={()=>alert('密碼')}
@@ -74,8 +73,7 @@ const CustomDrawerContent = (props) => {
       <DrawerItem 
         label="備份到雲端"
         labelStyle={ {fontSize: 16} }
-        inactiveTintColor = {colors.drawerBrown}
-        icon={({ color }) => (
+        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}        icon={({ color }) => (
           <MaterialCommunityIcons name="cloud-upload" color={color} size={30} />
         )}
         onPress={()=>alert('備份到雲端')}
@@ -83,8 +81,7 @@ const CustomDrawerContent = (props) => {
       <DrawerItem 
         label="問題回報"
         labelStyle={ {fontSize: 16} }
-        inactiveTintColor = {colors.drawerBrown}
-        icon={({ color }) => (
+        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}        icon={({ color }) => (
           <MaterialCommunityIcons name="chat-processing-outline" color={color} size={30} />
         )}
         onPress={()=>alert('問題回報')}
@@ -95,7 +92,7 @@ const CustomDrawerContent = (props) => {
 
 const MyDrawer = () => {
   const {colors} = useTheme();
-
+  const{colorMode} = useColorMode();
   return (
     <Drawer.Navigator 
       initialRouteName="Home"
@@ -104,9 +101,9 @@ const MyDrawer = () => {
         drawerActiveTintColor:colors.drawerBrown,
         drawerStyle: { 
           width: 300 ,
-          backgroundColor: '#E4E1DC',
+          backgroundColor: colorMode =="light"?'#E4E1DC':'#767DB2',
         },
-        drawerLabelStyle: { fontSize: 16 },
+        drawerLabelStyle: { fontSize: 16 ,color:colorMode =="light"? colors.drawerBrown:"#F6F6F6"},
       }}
       drawerContent={props => <CustomDrawerContent {...props} />}
     >
@@ -116,8 +113,8 @@ const MyDrawer = () => {
         options={{
           headerShown: false,
           title: "主頁",
-          drawerIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home-outline" color={color} size={30} />
+          drawerIcon: () => (
+            <MaterialCommunityIcons name="home-outline" color={colorMode =="light"? colors.drawerBrown:"#F6F6F6"} size={30} />
           ),
         }}
       />
@@ -127,8 +124,8 @@ const MyDrawer = () => {
         options={{
           headerShown: false,
           title: "設定",
-          drawerIcon: ({ color }) => (
-            <MaterialCommunityIcons name="cog" color={color} size={30} />
+          drawerIcon: () => (
+            <MaterialCommunityIcons name="cog" color={colorMode =="light"? colors.drawerBrown:"#F6F6F6"} size={30} />
           ),
         }}
       />
@@ -137,6 +134,8 @@ const MyDrawer = () => {
 }
 
 const SettingsStack = ({navigation}) => {
+  const{colorMode} = useColorMode();
+
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -145,7 +144,7 @@ const SettingsStack = ({navigation}) => {
         options={{
           title: null,
           headerStyle:{
-            backgroundColor:"#844331"
+            backgroundColor:colorMode =="light"?'#844331':'#767DB2',
           },
           headerLeft: () => (
               <MaterialCommunityIcons
@@ -164,7 +163,8 @@ const SettingsStack = ({navigation}) => {
 }
 
 const HomeStackNavigator =({navigation}) =>{
-  const {colors} = useTheme();
+  const{colorMode} = useColorMode();
+
   const[toggle,setToggle] = useState(true);
     return(
         <Stack.Navigator>
@@ -175,8 +175,7 @@ const HomeStackNavigator =({navigation}) =>{
                     title: null,
                     headerShadowVisible:false,
                     headerStyle:{
-                      backgroundColor:"#94A89A"
-                    },
+                      backgroundColor:colorMode =="light"?'#94A89A':'#767DB2',                    },
                     headerLeft: () => (
                         <MaterialCommunityIcons
                           name={'menu'}
@@ -201,8 +200,7 @@ const HomeStackNavigator =({navigation}) =>{
                     title: null,
                     headerShadowVisible:false,
                     headerStyle:{
-                      backgroundColor:"#94A89A"
-                    },
+                      backgroundColor:colorMode =="light"?'#94A89A':'#767DB2',                    },
                     headerLeft: () => (
                       <MaterialCommunityIcons
                         name={'menu'}
@@ -228,7 +226,7 @@ const HomeStackNavigator =({navigation}) =>{
                     title: null,
                     headerShadowVisible:false,
                     headerStyle:{
-                      backgroundColor:"#94A89A"
+                      backgroundColor:colorMode =="light"?'#94A89A':'#767DB2', 
                     },
                     headerLeft: () => (
                       <MaterialCommunityIcons

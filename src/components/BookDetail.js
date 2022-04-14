@@ -1,57 +1,47 @@
 import React from "react";
-import { Pressable, StyleSheet, Text, View, Image} from "react-native";
-
+import { Pressable, StyleSheet} from "react-native";
+import{Box, Image, Text} from 'native-base'
 const BookDetail = ({book, navigation}) => {
     return(
-    <View style={{flexDirection: 'column'}}>
+    <Box style={{flexDirection: 'column'}}>
       <Pressable onPress={()=> navigation.navigate('Detail', book)}>
-        <View style={styles.cardContainerStyle}>
-          <View style={styles.cardSectionStyle}>
+        <Box 
+          marginLeft={2}
+          marginRight={2}
+          marginTop={4}
+          _light={{borderColor:'#8094A89A',backgroundColor:'white'}}
+          _dark={{borderColor:'#7E7C80',backgroundColor:'#5C5D61'}}
+          borderWidth={1}
+          borderRadius={5}
+          width={95}
+          height={140}
+        >
+          <Box margin={2}>
               <Image
-                style={styles.imageStyle}
+                alt="book"
+                height={82}
+                width={82}
+                borderRadius={5}
+                borderColor="#94A89A80"
+                borderWidth={1}
                 source={{uri: book.image}}
               />
-          </View>
-          <View style={styles.headerContainerStyle}>
-            <Text style={styles.headerTitleStyle}>{book.title}</Text>
-          </View>
-        </View>    
+          </Box>
+          <Box paddingLeft={1}>
+            <Text 
+              fontSize={12}
+              _light={{color:"#496351"}}
+              _dark={{color:"#F6F6F6"}}
+              fontWeight='bold'
+              width={85}
+              textAlign='center'
+            >{book.title}</Text>
+          </Box>
+        </Box>    
       </Pressable>
-    </View>
+    </Box>
 )};
 
-const styles = StyleSheet.create({
-    cardContainerStyle: {
-      marginLeft: 6,
-      marginRight: 6,
-      marginTop: 12,
-      borderColor:'#8094A89A',
-      borderWidth:1,
-      borderRadius:5,
-      width:100,
-      height:150,
-      backgroundColor:'white',
-    },
-    headerContainerStyle: {
-      paddingLeft: 8,
-    },
-    headerTitleStyle: {
-      fontSize: 13,
-      color:"#496351",
-      fontWeight: 'bold',
-      width: 85,
-      textAlign:'center',
-    },
-    cardSectionStyle: {
-      margin:8,
-    },
-    imageStyle: {
-      height: 82,
-      width: 82,
-      borderRadius:5,
-      borderColor:"#94A89A80",
-      borderWidth:1,
-    }
-  });
+
 
   export default BookDetail;

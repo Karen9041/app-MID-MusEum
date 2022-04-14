@@ -1,6 +1,5 @@
-import { Box, Divider, HStack } from 'native-base';
+import { Box, Divider, HStack, ScrollView ,Text, Image } from 'native-base';
 import React from 'react';
-import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
 const DetailScreen = ({ route }) => {
   const { 
@@ -13,108 +12,91 @@ const DetailScreen = ({ route }) => {
     language
   } = route.params;
   return (
-    <ScrollView style={{backgroundColor: '#F7F7F7'}} >
-      <View style={{alignItems: 'center',backgroundColor:'white'}}>
+    <ScrollView _light={{bg:"#F6F6F6"}} _dark={{bg:"#32333E"}} >
+      <Box alignItems='center'_light={{bg:"white"}} _dark={{bg:"#C4C4C4"}}>
         <Image
-          style={styles.imageStyle}
+          alt='img'
+          height= {207} width={207} 
           source={{
             uri: image
           }}
         />
-      </View>
-      <Divider bg = "#94A89A" />
-      <View style={styles.cardContainerStyle}>
-            <Text style={styles.textTitleStyle}>{title}</Text>
+      </Box>
+      <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}} />
+      <Box  paddingHorizontal={15} paddingTop={15} marginHorizontal={10}
+      _light={{backgroundColor:'#F6F6F6'}}
+      _dark={{backgroundColor:'#32333E'}}
+      >
+            <Text fontSize={16} fontWeight='bold'
+            _light={{color:'#496351'}}
+            _dark={{color:'#F0E2BD'}}
+            >
+              {title}</Text>
           <HStack justifyContent={'space-around'} marginTop={5}>
               <Box>
-                <Text style={styles.textInfoStyle}>資訊</Text>
-                <Divider bg = "#94A89A" height={1} width={100}/>
+                <Text   textAlign='center' fontSize={14} fontWeight='bold'
+                  _light={{color:'#496351'}}
+                  _dark={{color:'#F0E2BD'}}
+                >資訊</Text>
+                <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#F0E2BD"}} height={1} width={100}/>
               </Box>
-              <Text style={styles.textMemStyle}>心得評分</Text>         
+              <Text width={100} textAlign='center' fontSize={14}
+              _light={{color:"#ABBAAF"}}
+              _dark = {{color:"#B0AA99"}}
+              >
+                心得評分</Text>         
           </HStack>
-      </View>
-      <Divider bg = "#94A89A" />
-      <View style={styles.cardInformationStyle}>
+      </Box>
+      <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}} />
+      <Box 
+      width={300}
+      height={78}
+      borderWidth={1}
+      borderRadius={8}
+      marginHorizontal={30}
+      marginVertical={25}
+      _light={{bg:'#94A89A'}}
+      _dark={{bg:'#5C5D61'}}
+      >
           <HStack justifyContent={'space-between'} padding={1}>
             <Box paddingLeft={2} marginRight={-1}>
-              <Text style={styles.textInformationTitleStyle}>作者</Text>
+              <Text fontSize={14} paddingVertical={5} paddingBottom={15}
+              _light={{color:'#496351'}}
+              _dark={{color:"#F0E2BD"}}
+              >作者</Text>
               <Text>{author}</Text>
             </Box>
-            <Divider bg = "#94A89A"  orientation="vertical" />
+            <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}}  orientation="vertical" />
             <Box marginLeft={-8}>
-              <Text style={styles.textInformationTitleStyle}>出版社</Text>
+              <Text fontSize={14} paddingVertical={5} paddingBottom={15}
+              _light={{color:'#496351'}}
+              _dark={{color:"#F0E2BD"}}>出版社</Text>
               <Text>{publisher}</Text>
             </Box>
-            <Divider bg = "#94A89A"  orientation="vertical" height={70} />
+            <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}}  orientation="vertical" height={70} />
             <Box paddingRight={10} marginLeft={-8}>
-              <Text style={styles.textInformationTitleStyle}>語言</Text>
+              <Text fontSize={14} paddingVertical={5} paddingBottom={15}
+              _light={{color:'#496351'}}
+              _dark={{color:"#F0E2BD"}}>語言</Text>
               <Text>{language}</Text>
             </Box>
           </HStack>
-      </View>
+      </Box>
       <HStack marginHorizontal={35} marginVertical={5}>
-          <Text style={styles.textDescriptionTitleStyle}>ISBN ：</Text>
+          <Text fontWeight='bold' fontSize={14}
+          _light={{color:"#496351"}}
+          _dark={{color:"#F0E2BD"}}
+          >ISBN ：</Text>
           <Text>{ISBN}</Text>
       </HStack>
       <HStack marginHorizontal={35} marginVertical={5}>
-          <Text style={styles.textDescriptionTitleStyle}>備註 ：</Text>
+          <Text fontWeight='bold' fontSize={14}
+          _light={{color:"#496351"}}
+          _dark={{color:"#F0E2BD"}}>備註 ：</Text>
           <Text>{descriptions}</Text>
       </HStack>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({  
-    imageStyle: {
-        height: 207,
-        width: 207,
-    },
-    cardContainerStyle: {
-        paddingHorizontal: 15,
-        paddingTop:15,
-        marginHorizontal: 10,
-        backgroundColor:'#F6F6F6'
-    },
-    textTitleStyle:{
-        fontSize: 16,
-        fontWeight:'bold',
-        color:"#496351"
-    },
-    textInfoStyle:{
-      textAlign:'center',
-      fontSize: 14,
-      fontWeight:'bold',
-      color:"#496351"
-    },
-    textMemStyle:{
-      width:100,
-      textAlign:'center',
-      fontSize: 14,
-      color:"#ABBAAF"
-    },
-    cardInformationStyle:{
-      width:300,
-      height:80,
-      backgroundColor:'white',
-      borderColor:'#94A89A',
-      borderWidth:1,
-      borderRadius:8,
-      marginHorizontal:30,
-      marginVertical:25
-    },
-    textInformationTitleStyle:{
-        fontSize: 14,
-        color:'#496351',
-        paddingVertical:5,
-        paddingBottom:15,
-    },
-    textDescriptionTitleStyle:{
-        // marginTop: 15,
-        // lineHeight:24,
-        fontWeight:'bold',
-        color:"#496351",
-        fontSize:14,
-    }
-});
 
 export default DetailScreen;

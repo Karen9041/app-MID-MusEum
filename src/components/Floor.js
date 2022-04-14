@@ -59,7 +59,9 @@ const Floor = ({navigation}) =>{
                 marginTop = {-100}
                 marginBottom ={50}
                 marginLeft = {270}
-                leftIcon={<Icon as={MaterialCommunityIcons} name="circle-edit-outline" size="md" color="white"/>}
+                _light={{bg:"#94A89A"}}
+                _dark={{bg:"#F6F6F6"}}
+                leftIcon={<Icon as={MaterialCommunityIcons} name="pencil-box-multiple-outline" size="md" _light={{color:"white"}} _dark={{color:"#393A45"}}/>}
             >
             </Button>
     </>

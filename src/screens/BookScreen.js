@@ -1,17 +1,17 @@
 import React from "react";
-import { View } from "react-native";
+import { Box } from "native-base";
 import Booklist from "../components/Booklist";
 
 const BookScreen = ({ navigation }) => {
   return (
-    <View style={{
-        flex: 1 ,
-        backgroundColor:'#F6F6F6',
-    }}>
+    <Box 
+        flex={1}
+        _light={{bg:"#F6F6F6"}} _dark={{bg:"#32333E"}}
+    >
       <Booklist 
         navigation={navigation}
       />
-    </View>
+    </Box>
   );
 };
 
