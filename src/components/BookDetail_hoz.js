@@ -40,7 +40,7 @@ const BookDetail = ({book, navigation}) => {
                 width={82}
               >{book.author}</Text>
             </Box>
-            <Icon as={MaterialCommunityIcons} name="chevron-double-right" size="5"  _light={{color:"#496351"}} _dark={{color:"#393A45"}}  marginTop={3}
+            <Icon as={MaterialCommunityIcons} name="chevron-double-right" size="5"  _light={{color:"#496351"}} _dark={{color:"#F6F6F6"}}  marginTop={3}
 />
           </HStack>
       </Pressable>

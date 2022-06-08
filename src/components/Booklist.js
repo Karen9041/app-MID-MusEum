@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import {  FlatList, SectionList } from "react-native";
-import { Text, Divider, Button, HStack, Icon } from "native-base";
+import { Text, Divider, Button, HStack, Icon, Box } from "native-base";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import BookDetail from "./BookDetail"
 import BookDetail_hoz from "./BookDetail_hoz"
 import sections from "../json/bookData.json";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSort, setSort } from "../redux/sortSlice";
+import LottieView from "lottie-react-native"
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
 const Booklist = ({navigation}) => {
   //Get state from store
@@ -14,6 +16,12 @@ const Booklist = ({navigation}) => {
 
   //Define a dispatch to send actions
   const dispatch = useDispatch();
+
+  const animation = useRef(null);
+  const onPress = ()=>{
+    animation.current.play();
+    dispatch(setSort(sortState));
+  }
 
   const renderSectionHeader = ({section}) => (
     <>
@@ -29,12 +37,12 @@ const Booklist = ({navigation}) => {
         textAlign='center'
         paddingTop={2}
         _light={{color:'white' ,bg:"#94A89A"}}
-        _dark={{color:'#32333E',bg:"#F0E2BD"}}
+        _dark={{color:'#32333E',bg:"#D6E5BE"}}
         >{section.title}</Text>
       </HStack>
       <Divider 
       _light={{bg:"#94A89A"}}
-      _dark={{bg:"#F0E2BD"}} 
+      _dark={{bg:"#D6E5BE"}} 
       width ={315} ml={2.5}/>
       <HStack>
         <Button 
@@ -42,31 +50,31 @@ const Booklist = ({navigation}) => {
           width={16} 
           height={6} 
           marginLeft={220} 
-          marginTop={3}
+          marginTop={2}
           variant={"ghost"}
           padding={0}
           // _light={{borderColor:"#94A89A"}}
           // _dark={{borderColor:"#F0E2BD"}}
-          leftIcon={<Icon as={MaterialCommunityIcons} name="menu-swap" size="md" _light={{color:"#94A89A"}} _dark={{color:"#393A45"}} marginRight={-3}/>}
-          _text={{
-            color:"#94A89A",
+          leftIcon={<Icon as={MaterialCommunityIcons} name="menu-swap" size="md" _light={{color:"#94A89A"}} _dark={{color:"#D6E5BE"}} marginRight={-3}/>}
+          _text={
+          {
+            _light:{color:"#94A89A"},
+            _dark:{color:"#D6E5BE"},
             fontSize:14,
-          }} >排序
+          }}>排序
         </Button>
-        <Button 
-          onPress={()=>{dispatch(setSort(sortState))
-          console.log(sortState)
-          }}
-          width={6} 
-          height={6} 
-          marginLeft={3} 
-          marginTop={3}
-          variant={"ghost"}
-          padding={0}
-          // _light={{borderColor:"#94A89A"}}
-          // _dark={{borderColor:"#F0E2BD"}}
-          leftIcon={<Icon as={MaterialCommunityIcons} name="pencil-box-multiple-outline" size="sm" _light={{color:"#94A89A"}} _dark={{color:"#393A45"}}/>}
-        />
+        <Pressable onPress={onPress}>
+          <Box h={10} w={10} >
+            <LottieView
+                source={require("../json/lottie_sort.json")}
+                ref={animation}
+                loop={false}
+                speed={
+                  sortState?-1:1
+                }
+              />
+          </Box>
+        </Pressable>
       </HStack>
       {sortState?
         <FlatList

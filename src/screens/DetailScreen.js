@@ -29,55 +29,56 @@ const DetailScreen = ({ route }) => {
       >
             <Text fontSize={16} fontWeight='bold'
             _light={{color:'#496351'}}
-            _dark={{color:'#F0E2BD'}}
+            _dark={{color:'#D6E5BE'}}
             >
               {title}</Text>
           <HStack justifyContent={'space-around'} marginTop={5}>
               <Box>
                 <Text   textAlign='center' fontSize={14} fontWeight='bold'
                   _light={{color:'#496351'}}
-                  _dark={{color:'#F0E2BD'}}
+                  _dark={{color:'#D6E5BE'}}
                 >資訊</Text>
-                <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#F0E2BD"}} height={1} width={100}/>
+                <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#D6E5BE"}} height={1} width={100}/>
               </Box>
               <Text width={100} textAlign='center' fontSize={14}
               _light={{color:"#ABBAAF"}}
-              _dark = {{color:"#B0AA99"}}
+              _dark = {{color:"#98A287"}}
               >
                 心得評分</Text>         
           </HStack>
       </Box>
-      <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}} />
+      <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#D6E5BE"}} />
       <Box 
       width={300}
       height={78}
-      borderWidth={1}
+      borderWidth={0.8}
       borderRadius={8}
+      borderColor={"#ABBAAF"}
       marginHorizontal={30}
       marginVertical={25}
-      _light={{bg:'#94A89A'}}
+      _light={{bg:'#FFFFFF'}}
       _dark={{bg:'#5C5D61'}}
       >
           <HStack justifyContent={'space-between'} padding={1}>
             <Box paddingLeft={2} marginRight={-1}>
               <Text fontSize={14} paddingVertical={5} paddingBottom={15}
               _light={{color:'#496351'}}
-              _dark={{color:"#F0E2BD"}}
+              _dark={{color:"#D6E5BE"}}
               >作者</Text>
               <Text>{author}</Text>
             </Box>
-            <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}}  orientation="vertical" />
+            <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#D6E5BE"}}  orientation="vertical" />
             <Box marginLeft={-8}>
               <Text fontSize={14} paddingVertical={5} paddingBottom={15}
               _light={{color:'#496351'}}
-              _dark={{color:"#F0E2BD"}}>出版社</Text>
+              _dark={{color:"#D6E5BE"}}>出版社</Text>
               <Text>{publisher}</Text>
             </Box>
             <Divider _light={{bg:"#94A89A"}} _dark={{bg:"#B0AA99"}}  orientation="vertical" height={70} />
             <Box paddingRight={10} marginLeft={-8}>
               <Text fontSize={14} paddingVertical={5} paddingBottom={15}
               _light={{color:'#496351'}}
-              _dark={{color:"#F0E2BD"}}>語言</Text>
+              _dark={{color:"#D6E5BE"}}>語言</Text>
               <Text>{language}</Text>
             </Box>
           </HStack>
@@ -85,14 +86,14 @@ const DetailScreen = ({ route }) => {
       <HStack marginHorizontal={35} marginVertical={5}>
           <Text fontWeight='bold' fontSize={14}
           _light={{color:"#496351"}}
-          _dark={{color:"#F0E2BD"}}
+          _dark={{color:"#D6E5BE"}}
           >ISBN ：</Text>
           <Text>{ISBN}</Text>
       </HStack>
       <HStack marginHorizontal={35} marginVertical={5}>
           <Text fontWeight='bold' fontSize={14}
           _light={{color:"#496351"}}
-          _dark={{color:"#F0E2BD"}}>備註 ：</Text>
+          _dark={{color:"#D6E5BE"}}>備註 ：</Text>
           <Text>{descriptions}</Text>
       </HStack>
     </ScrollView>

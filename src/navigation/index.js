@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
@@ -10,7 +10,7 @@ import {
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-import { Divider, Image, Box, Text, Pressable, useColorMode } from 'native-base';
+import { Divider, Image, Box, Pressable, useColorMode } from 'native-base';
 
 import ListScreen from '../screens/ListScreen';
 import FloorScreen from '../screens/FloorScreen';
@@ -18,6 +18,7 @@ import DetailScreen from '../screens/DetailScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 import MyTheme from '../Theme';
+import LottieView from "lottie-react-native"
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -143,6 +144,7 @@ const SettingsStack = ({navigation}) => {
         component={SettingsScreen}
         options={{
           title: null,
+          headerShadowVisible:true,
           headerStyle:{
             backgroundColor:colorMode =="light"?'#844331':'#767DB2',
           },
@@ -166,6 +168,11 @@ const HomeStackNavigator =({navigation}) =>{
   const{colorMode} = useColorMode();
 
   const[toggle,setToggle] = useState(true);
+  const animation = useRef(null);
+  const onPress=()=>{
+    animation.current.play();
+    navigation.openDrawer();
+  }
     return(
         <Stack.Navigator>
             <Stack.Screen
@@ -173,24 +180,23 @@ const HomeStackNavigator =({navigation}) =>{
                 component={FloorScreen}
                 options={{
                     title: null,
-                    headerShadowVisible:false,
+                    headerShadowVisible:true,
                     headerStyle:{
-                      backgroundColor:colorMode =="light"?'#94A89A':'#767DB2',                    },
+                      backgroundColor:colorMode =="light"?'#94A89A':'#393A45',
+                    },
                     headerLeft: () => (
-                        <MaterialCommunityIcons
-                          name={'menu'}
-                          color={'white'}
-                          size={28}
-                          onPress={() => navigation.openDrawer()}
-                        />
+                        <Pressable onPress={onPress}>
+                          <Box h={28} w={28}>
+                            <LottieView
+                              source={require("../json/lottie_menu.json")}
+                              loop={false}
+                              ref={animation}
+                              // onPress={() => navigation.openDrawer()}
+                            />
+                          </Box>
+                        </Pressable>
+                        
                       ),
-                    // headerRight: () => (
-                    //     <MaterialCommunityIcons
-                    //       name={'magnify'}
-                    //       size={28}
-                    //       // style={{ marginRight: 8 }}
-                    //     />
-                    //   )
                 }}
             />
             <Stack.Screen
@@ -198,24 +204,29 @@ const HomeStackNavigator =({navigation}) =>{
                 component={ListScreen}
                 options={{
                     title: null,
-                    headerShadowVisible:false,
+                    headerShadowVisible:true,
                     headerStyle:{
-                      backgroundColor:colorMode =="light"?'#94A89A':'#767DB2',                    },
+                      backgroundColor:colorMode =="light"?'#94A89A':'#393A45',
+                    },
                     headerLeft: () => (
-                      <MaterialCommunityIcons
-                        name={'menu'}
-                        color={'white'}
-                        size={28}
-                        onPress={() => navigation.openDrawer()}
-                      />
+                      <Pressable onPress={onPress}>
+                        <Box h={28} w={28}>
+                          <LottieView
+                            source={require("../json/lottie_menu.json")}
+                            loop={false}
+                            ref={animation}                          />
+                        </Box>
+                      </Pressable>
                     ),
                     headerRight: () => (
-                      <MaterialCommunityIcons
-                        name={'magnify'}
-                        color={'white'}
-                        size={28}
-                        // style={{ marginRight: 8 }}
-                      />
+                      <Pressable onPress={()=>animation.current.play()}>
+                        <Box h={30} w={30}>
+                          <LottieView
+                            source={require("../json/lottie_search.json")}
+                            loop={false}
+                            ref={animation}                          />
+                        </Box>
+                      </Pressable>
                     )
                 }}
             />
@@ -224,9 +235,9 @@ const HomeStackNavigator =({navigation}) =>{
                 component={DetailScreen}
                 options={{
                     title: null,
-                    headerShadowVisible:false,
+                    headerShadowVisible:true,
                     headerStyle:{
-                      backgroundColor:colorMode =="light"?'#94A89A':'#767DB2', 
+                      backgroundColor:colorMode =="light"?'#94A89A':'#393A45',
                     },
                     headerLeft: () => (
                       <MaterialCommunityIcons
