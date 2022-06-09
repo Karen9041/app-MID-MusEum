@@ -87,13 +87,13 @@ const DetailScreen = ({ route }) => {
           <Text fontWeight='bold' fontSize={14}
           _light={{color:"#496351"}}
           _dark={{color:"#D6E5BE"}}
-          >ISBN ：</Text>
+          >ISBN : </Text>
           <Text>{ISBN}</Text>
       </HStack>
       <HStack marginHorizontal={35} marginVertical={5}>
           <Text fontWeight='bold' fontSize={14}
           _light={{color:"#496351"}}
-          _dark={{color:"#D6E5BE"}}>備註 ：</Text>
+          _dark={{color:"#D6E5BE"}}>備註 : </Text>
           <Text>{descriptions}</Text>
       </HStack>
     </ScrollView>

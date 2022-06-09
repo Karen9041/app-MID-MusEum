@@ -96,7 +96,7 @@ const Floor = ({navigation}) =>{
             marginLeft = {270}
             _light={{bg:"#94A89A"}}
             _dark={{bg:"#F6F6F6"}}
-            leftIcon={<Icon as={MaterialCommunityIcons} name="pencil-box-multiple-outline" size="md" _light={{color:"white"}} _dark={{color:"#393A45"}}/>}
+            leftIcon={<Icon as={MaterialCommunityIcons} name="square-edit-outline" size="md" _light={{color:"white"}} _dark={{color:"#393A45"}}/>}
         >
         </Button>
     </>

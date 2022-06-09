@@ -9,13 +9,13 @@ const ListItem = ({ title, navigation, destination }) => {
        }}
      >
        <HStack
-         _light={{bg:"#E4E1DC"}} _dark={{bg:"#393A45"}}
+         _light={{bg:"#F1F3FD"}} _dark={{bg:"#393A45"}}
          px="6"
          py="2"
         //  borderTopWidth={1}
         //  borderColor="lightgray"
        >
-         <Text fontSize={16} _light={{color:"#844331"}} _dark={{color:"#F6F6F6"}} >{title}</Text>
+         <Text fontSize={16} _light={{color:"#41367C"}} _dark={{color:"#F6F6F6"}} >{title}</Text>
        </HStack>
      </Pressable>
    );

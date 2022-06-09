@@ -44,7 +44,7 @@ const CustomDrawerContent = (props) => {
     <DrawerContentScrollView {...props} >
       <Box>
       <Image
-        source={colorMode =="light"?require("../images/LOGO.png"):require("../images/LOGO_dark.png")}
+        source={require("../images/LOGO_1.png")}
         alt='LOGO'
       />
       </Box>
@@ -52,19 +52,19 @@ const CustomDrawerContent = (props) => {
       <DrawerItem 
         label="主題"
         labelStyle={ {fontSize: 16} }
-        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}
+        inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F1F3FD"}
         icon={({ color }) => (
           <MaterialCommunityIcons name="palette" color={color} size={30} />
         )}
         onPress={()=>alert('主題')}
       />
       <DrawerItem 
-        label="我的最愛"
+        label="收藏"
         labelStyle={ {fontSize: 16} }
         inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}        icon={({ color }) => (
           <MaterialCommunityIcons name="bookmark-outline" color={color} size={30} />
         )}
-        onPress={()=>alert('我的最愛')}
+        onPress={()=>alert('收藏')}
       />
       <Divider bg={colorMode =="light"? colors.drawerBrown:"#F6F6F6"} width={270} marginLeft={4}/>
       <DrawerItem 
@@ -87,7 +87,7 @@ const CustomDrawerContent = (props) => {
         label="問題回報"
         labelStyle={ {fontSize: 16} }
         inactiveTintColor={colorMode =="light"? colors.drawerBrown:"#F6F6F6"}        icon={({ color }) => (
-          <MaterialCommunityIcons name="chat-processing-outline" color={color} size={30} />
+          <MaterialCommunityIcons name="forum-outline" color={color} size={30} />
         )}
         onPress={()=>alert('問題回報')}
       />
@@ -102,11 +102,11 @@ const MyDrawer = () => {
     <Drawer.Navigator 
       initialRouteName="Home"
       screenOptions={{
-        drawerInactiveTintColor:colors.drawerBrown,
-        drawerActiveTintColor:colors.drawerBrown,
+        drawerInactiveTintColor:"#F1F3FD",
+        drawerActiveTintColor:"#41367C",
         drawerStyle: { 
           width: 300 ,
-          backgroundColor: colorMode =="light"?'#E4E1DC':'#767DB2',
+          backgroundColor: colorMode =="light"?'#F1F3FD':'#767DB2',
         },
         drawerLabelStyle: { fontSize: 16 ,color:colorMode =="light"? colors.drawerBrown:"#F6F6F6"},
       }}
@@ -150,7 +150,7 @@ const SettingsStack = ({navigation}) => {
           title: null,
           headerShadowVisible:true,
           headerStyle:{
-            backgroundColor:colorMode =="light"?'#844331':'#767DB2',
+            backgroundColor:colorMode =="light"?'#41367C':'#767DB2',
           },
           headerLeft: () => (
               <MaterialCommunityIcons

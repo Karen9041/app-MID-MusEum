@@ -5,8 +5,8 @@ const MyTheme = {
    colors: {
      ...DefaultTheme.colors,
      primaryGreen: '#94A89A',
-     drawerBrown: '#844331',
-     drawerBgc:'#E4E1DC',
+     drawerBrown: '#41367C',
+     drawerBgc:'#F1F3FD',
      lightBgc:'#F6F6F6',
      darkBgc:'#32333E',
      darkHeader:'#393A45',
