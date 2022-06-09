@@ -16,7 +16,7 @@ const SettingsScreen = ({ navigation }) => {
                     onThumbColor="#844331" onTrackColor="gray" 
                     marginRight={6}
                     name="light Mode"
-                    isChecked={colorMode === "light"}
+                    isChecked={colorMode == "light"}
                     onToggle={toggleColorMode}
                     accessibilityLasbel="display-mode"
                     accessibilityHint="light or dark mode"

@@ -20,8 +20,12 @@ import SettingsScreen from '../screens/SettingsScreen';
 import MyTheme from '../Theme';
 import LottieView from "lottie-react-native"
 
+import { useDispatch, useSelector } from "react-redux";
+import { selectSearch, setSearch } from "../redux/searchSlice";
+
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
+
 
 
 const Navigation = () =>{
@@ -164,15 +168,23 @@ const SettingsStack = ({navigation}) => {
   );
 }
 
+
 const HomeStackNavigator =({navigation}) =>{
   const{colorMode} = useColorMode();
 
   const[toggle,setToggle] = useState(true);
   const animation = useRef(null);
+
+  const searchState = useSelector(selectSearch);
+  const dispatch = useDispatch();
+
   const onPress=()=>{
     animation.current.play();
-    navigation.openDrawer();
+    dispatch(setSearch(searchState));
+    console.log(searchState)
   }
+  
+
     return(
         <Stack.Navigator>
             <Stack.Screen
@@ -185,17 +197,12 @@ const HomeStackNavigator =({navigation}) =>{
                       backgroundColor:colorMode =="light"?'#94A89A':'#393A45',
                     },
                     headerLeft: () => (
-                        <Pressable onPress={onPress}>
-                          <Box h={28} w={28}>
-                            <LottieView
-                              source={require("../json/lottie_menu.json")}
-                              loop={false}
-                              ref={animation}
-                              // onPress={() => navigation.openDrawer()}
-                            />
-                          </Box>
-                        </Pressable>
-                        
+                      <MaterialCommunityIcons
+                        name={'menu'}
+                        color={'white'}
+                        size={28}
+                        onPress={() => navigation.openDrawer()}
+                      />
                       ),
                 }}
             />
@@ -209,22 +216,22 @@ const HomeStackNavigator =({navigation}) =>{
                       backgroundColor:colorMode =="light"?'#94A89A':'#393A45',
                     },
                     headerLeft: () => (
-                      <Pressable onPress={onPress}>
-                        <Box h={28} w={28}>
-                          <LottieView
-                            source={require("../json/lottie_menu.json")}
-                            loop={false}
-                            ref={animation}                          />
-                        </Box>
-                      </Pressable>
+                      <MaterialCommunityIcons
+                        name={'menu'}
+                        color={'white'}
+                        size={28}
+                        onPress={() => navigation.openDrawer()}
+                      />
                     ),
                     headerRight: () => (
-                      <Pressable onPress={()=>animation.current.play()}>
+                      <Pressable onPress={onPress}>
                         <Box h={30} w={30}>
                           <LottieView
+                            ref={animation}
                             source={require("../json/lottie_search.json")}
                             loop={false}
-                            ref={animation}                          />
+                            speed={searchState?1:-1}
+                          />
                         </Box>
                       </Pressable>
                     )
@@ -265,6 +272,7 @@ const HomeStackNavigator =({navigation}) =>{
                     )
                 }}
             />
+            
         </Stack.Navigator>
     );
 }
